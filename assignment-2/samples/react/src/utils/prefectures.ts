@@ -1,3 +1,4 @@
+// 都道府県の一覧
 export const prefectures = [
   "北海道",
   "青森県",

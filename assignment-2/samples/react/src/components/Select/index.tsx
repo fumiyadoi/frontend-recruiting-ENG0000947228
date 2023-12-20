@@ -9,6 +9,7 @@ interface Props {
   register?: any;
 }
 
+// セレクト用の共通コンポーネント
 function Select({
   value,
   options,

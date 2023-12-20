@@ -12,6 +12,7 @@ function FormButton({ useFormReturn }: Props) {
     formState: { isSubmitting },
   } = useFormReturn;
 
+  // 入力項目が建物名・号室を除き全て入力されているかどうかを判定する
   const isValid =
     watch("name")?.length &&
     watch("email")?.length &&

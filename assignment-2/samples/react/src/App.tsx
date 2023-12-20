@@ -6,27 +6,23 @@ import { UserSchemaType, userSchema } from "./schema";
 import { FormBody } from "./components";
 
 function App() {
+  // フォームの状態を管理する
   const useFormReturn = useForm<UserSchemaType>({
     resolver: zodResolver(userSchema),
   });
   const { handleSubmit } = useFormReturn;
 
+  // フォームの送信ボタンが押された時の処理
   const onSubmit = async (data: UserSchemaType) => {
-    console.log(data);
-    // https://httpstat.us/201 に対してPOSTリクエストを送信してください。
-    // リクエストのボディには以下の形式で送信してください。
-    // {
-    //       name: "トレタ太郎",
-    //       email: "yoyaku@toreta.in",
-    //       zip: "0000000";
-    //       prefecture: "東京都";
-    //       address1: "品川区西五反田7丁目22-17";
-    //       address2: "TOCビル8F";
-    // }
-    await fetch("https://httpstat.us/201", {
-      method: "POST",
-      body: JSON.stringify(data),
-    });
+    try {
+      await fetch("https://httpstat.us/201", {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
+    } catch (e) {
+      console.error(e);
+      window.alert("エラーが発生しました");
+    }
   };
 
   return (

@@ -8,6 +8,7 @@ interface Props {
   register?: any;
 }
 
+// テキストフィールド用の共通コンポーネント
 function TextField({ type, required, placeholder, disabled, register }: Props) {
   return (
     <input

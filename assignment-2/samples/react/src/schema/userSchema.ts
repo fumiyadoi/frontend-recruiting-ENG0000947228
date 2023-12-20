@@ -1,5 +1,6 @@
 import { z } from "zod";
 
+// ユーザー情報のスキーマ
 export const userSchema = z.object({
   name: z.string().min(1, { message: "名前を入力してください。" }),
   email: z
@@ -19,4 +20,5 @@ export const userSchema = z.object({
   address2: z.string().optional(),
 });
 
+// ユーザー情報のスキーマの型
 export type UserSchemaType = z.infer<typeof userSchema>;

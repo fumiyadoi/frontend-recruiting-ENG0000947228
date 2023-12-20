@@ -7,6 +7,7 @@ interface Props {
   onClick?: () => void;
 }
 
+// ボタン用の共通コンポーネント
 function Button({ type = "button", children, disabled, onClick }: Props) {
   return (
     <button
